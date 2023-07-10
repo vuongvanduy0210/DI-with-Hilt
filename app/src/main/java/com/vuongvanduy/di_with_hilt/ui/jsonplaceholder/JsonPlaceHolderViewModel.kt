@@ -17,6 +17,9 @@ class JsonPlaceHolderViewModel @Inject constructor(private val postRepository: P
     var listPost = MutableLiveData<List<Post>?>()
         private set
 
+    var firstPost = MutableLiveData<Post>()
+        private set
+
     fun fetchData() {
         Log.e("Duy", "fetchData start")
 
@@ -26,6 +29,9 @@ class JsonPlaceHolderViewModel @Inject constructor(private val postRepository: P
             val posts = postRepository.getPosts()
             if (!posts.isNullOrEmpty()) {
                 listPost.postValue(posts)
+            }
+            posts?.firstOrNull()?.let { post ->
+                firstPost.postValue(post)
             }
         }
         registerParentJobFinish()

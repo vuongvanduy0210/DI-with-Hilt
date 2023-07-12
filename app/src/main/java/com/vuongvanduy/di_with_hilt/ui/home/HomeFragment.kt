@@ -4,32 +4,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.NavHostFragment
+import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.vuongvanduy.di_with_hilt.R
-import com.vuongvanduy.di_with_hilt.base.fragment.BaseFragment
-import com.vuongvanduy.di_with_hilt.databinding.FragmentHomeBinding
-import dagger.hilt.android.AndroidEntryPoint
 
-class HomeFragment : BaseFragment() {
+class HomeFragment : Fragment() {
 
-    private lateinit var dataBinding: FragmentHomeBinding
+    private lateinit var view: View
+    private lateinit var btJPH: Button
+    private lateinit var btSOF: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        dataBinding = FragmentHomeBinding.inflate(inflater)
-        dataBinding.btJsonPlaceHolder.setOnClickListener {
-            openScreen()
+    ): View {
+        view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        btJPH = view.findViewById(R.id.bt_jph)
+        btSOF = view.findViewById(R.id.bt_sof)
+        btJPH.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_jsonPlaceHolderFragment2)
         }
-        return dataBinding.root
+        btSOF.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_stackOverFlowFragment3)
+        }
+        return view
     }
-
-    private fun openScreen() {
-
-    }
-
-
 }

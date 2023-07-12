@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
-
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.vuongvanduy.di_with_hilt.ui.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_jsonPlaceHolderFragment"
+            android:id="@+id/action_homeFragment_to_jsonPlaceHolderFragment2"
             app:destination="@id/jsonPlaceHolderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_stackOverFlowFragment3"
+            app:destination="@id/stackOverFlowFragment3" />
     </fragment>
     <fragment
         android:id="@+id/jsonPlaceHolderFragment"
         android:name="com.vuongvanduy.di_with_hilt.ui.jsonplaceholder.JsonPlaceHolderFragment"
-        android:label="JsonPlaceHolderFragment" />
+        android:label="fragment_json_place_holder"
+        tools:layout="@layout/fragment_json_place_holder" />
+    <fragment
+        android:id="@+id/stackOverFlowFragment3"
+        android:name="com.vuongvanduy.di_with_hilt.ui.stackoverflow.StackOverFlowFragment"
+        android:label="StackOverFlowFragment" />
 </navigation>

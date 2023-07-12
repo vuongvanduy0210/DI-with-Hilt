@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.vuongvanduy.di_with_hilt.ui.jsonplaceholder.JsonPlaceHolderViewModel" />
+            type="com.vuongvanduy.di_with_hilt.ui.stackoverflow.StackOverFlowViewModel" />
         <import type="android.view.View"/>
     </data>
 
@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="20dp"
-        tools:context=".ui.jsonplaceholder.JsonPlaceHolderFragment">
+        tools:context=".ui.stackoverflow.StackOverFlowFragment">
 
         <ProgressBar
             android:layout_width="40dp"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:text="@{viewModel.firstPost.toString()}"/>
+            android:text="@{viewModel.listQuestions.toString()}"/>
 
 
     </LinearLayout>

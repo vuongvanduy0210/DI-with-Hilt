@@ -1,21 +1,21 @@
-package com.vuongvanduy.di_with_hilt.ui.jsonplaceholder
+package com.vuongvanduy.di_with_hilt.ui.stackoverflow
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.vuongvanduy.di_with_hilt.R
 import com.vuongvanduy.di_with_hilt.base.fragment.BaseFragment
-import com.vuongvanduy.di_with_hilt.databinding.FragmentJsonPlaceHolderBinding
+import com.vuongvanduy.di_with_hilt.databinding.FragmentStackOverFlowBinding
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class JsonPlaceHolderFragment : BaseFragment() {
+class StackOverFlowFragment : BaseFragment() {
 
-    private lateinit var dataBinding: FragmentJsonPlaceHolderBinding
+    private lateinit var dataBinding: FragmentStackOverFlowBinding
 
-    private val viewModel by viewModels<JsonPlaceHolderViewModel>()
+    private val viewModel by viewModels<StackOverFlowViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +26,8 @@ class JsonPlaceHolderFragment : BaseFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        dataBinding = FragmentJsonPlaceHolderBinding.inflate(inflater, container, false)
+    ): View? {
+        dataBinding = FragmentStackOverFlowBinding.inflate(inflater, container, false)
         dataBinding.lifecycleOwner = viewLifecycleOwner
         dataBinding.viewModel = viewModel
         return dataBinding.root
